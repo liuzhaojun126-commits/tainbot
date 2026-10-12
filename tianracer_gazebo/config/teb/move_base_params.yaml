@@ -1,6 +1,6 @@
 shutdown_costmaps: false #当move_base在不活动状态时,是否关掉costmap
 
-controller_frequency: 5.0 #向底盘控制移动话题cmd_vel发送命令的频率.
+controller_frequency: 15.0 #向底盘控制移动话题cmd_vel发送命令的频率.（原 5.0；5 m/s 时 5 Hz 意味着每个控制周期车走 1 m）
 controller_patience: 3.0
 
 planner_frequency: 0.5
