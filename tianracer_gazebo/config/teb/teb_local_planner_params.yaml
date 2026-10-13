@@ -7,8 +7,8 @@ TebLocalPlannerROS:
   # Trajectoty 这部分主要是用于调整轨迹
 
   teb_autosize: True #优化期间允许改变轨迹的时域长度
-  dt_ref: 0.3 #期望的轨迹时间分辨率
-  dt_hysteresis: 0.03 #根据当前时间分辨率自动调整大小的滞后现象，通常约为。建议使用dt ref的10%
+  dt_ref: 0.25 #期望的轨迹时间分辨率（高速下加密轨迹点，过弯更精准）
+  dt_hysteresis: 0.025 #约为 dt_ref 的 10%
 
   #覆盖全局规划器提供的局部子目标的方向;规划局部路径时会覆盖掉全局路径点的方位角,
   #对于车辆的2D规划,可以设置为False,可实现对全局路径的更好跟踪。
@@ -34,11 +34,11 @@ TebLocalPlannerROS:
   publish_feedback: False
 
   # Robot
-  max_vel_x: 4.0          # 最大前进速度 m/s（走廊仅 0.95 m，5 m/s 过弯会超出轮胎抓地极限）
+  max_vel_x: 6.0          # 直道极速 m/s；急弯速度由 max_vel_theta 独立卡在 3.85。直道仅 3~4 m，6 已能达到理论极速（再高无收益、徒增冲弯风险）
   max_vel_x_backwards: 1
   max_vel_theta: 5.0      # 最大角速度 rad/s；实测最急弯半径 0.77 m，5.0×0.77=3.85 m/s 时横向加速度 1.96g，正好在轮胎 2g 抓地极限内
-  acc_lim_x: 4.0          # 线加速度上限 m/s^2（原 1.8）；0→5 m/s 约需 3.1 m
-  acc_lim_theta: 6.0      # 角加速度上限 rad/s^2（原 3.6）
+  acc_lim_x: 7.0          # 线加速度上限 m/s^2；直道/出弯快速加速（抓地极限约 19.6，弯中 TEB 自动减速，7 留稳定余量）
+  acc_lim_theta: 7.0      # 角加速度上限 rad/s^2；发卡弯更快打/回方向，7 避免转向伺服超调画蛇
 
   #仅适用于全向轮
   # max_vel_y (double, default: 0.0)
@@ -108,11 +108,11 @@ TebLocalPlannerROS:
   weight_kinematics_nh: 100
   weight_kinematics_forward_drive: 100 #1
   weight_kinematics_turning_radius: 100 #1
-  weight_optimaltime: 1.5 # 时间最优权重（航点已把路线钉死，可以适度抢时间）
+  weight_optimaltime: 2.0 # 时间最优权重（航点已把路线钉死，积极抢时间）
   weight_shortest_path: 0
   weight_obstacle: 30 # 避障权重（走廊仅 0.95 m，50 会让左右墙互相推挤、车画蛇）
   weight_inflation: 1 # 配合局部代价地图 0.20 膨胀半径
-  weight_viapoint: 1.0 # 配合 global_plan_viapoint_sep，让车贴着全局路径走而不是切弯
+  weight_viapoint: 1.5 # 高速下更紧贴全局路径，防止切弯撞墙（配合 global_plan_viapoint_sep）
   weight_dynamic_obstacle: 1 # not in use yet
   # alternative_time_cost: False # not in use yet
   selection_alternative_time_cost: True
