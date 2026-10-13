@@ -12,19 +12,7 @@ waypoints:
       y: 0.100000
       z: 0.0
 - frame_id: map
-  name: wp01_-3.545_-2.100
-  pose:
-    orientation:
-      w: 0.000000
-      x: 0.0
-      y: 0.0
-      z: 1.000000
-    position:
-      x: -3.545025
-      y: -2.100000
-      z: 0.0
-- frame_id: map
-  name: wp02_-3.083_-4.717
+  name: wp01_-3.083_-4.717
   pose:
     orientation:
       w: 0.880791
@@ -36,19 +24,7 @@ waypoints:
       y: -4.717229
       z: 0.0
 - frame_id: map
-  name: wp03_-1.741_-8.500
-  pose:
-    orientation:
-      w: 1.000000
-      x: 0.0
-      y: 0.0
-      z: 0.000000
-    position:
-      x: -1.740660
-      y: -8.500000
-      z: 0.0
-- frame_id: map
-  name: wp04_1.700_-6.396
+  name: wp02_1.700_-6.396
   pose:
     orientation:
       w: 0.707107
@@ -60,19 +36,7 @@ waypoints:
       y: -6.395635
       z: 0.0
 - frame_id: map
-  name: wp05_-0.200_-3.009
-  pose:
-    orientation:
-      w: 0.707107
-      x: 0.0
-      y: 0.0
-      z: 0.707107
-    position:
-      x: -0.200000
-      y: -3.009188
-      z: 0.0
-- frame_id: map
-  name: wp06_-0.100_1.733
+  name: wp03_-0.100_1.733
   pose:
     orientation:
       w: 0.707107
@@ -84,19 +48,7 @@ waypoints:
       y: 1.732893
       z: 0.0
 - frame_id: map
-  name: wp07_-2.409_4.500
-  pose:
-    orientation:
-      w: 0.000000
-      x: 0.0
-      y: 0.0
-      z: 1.000000
-    position:
-      x: -2.409289
-      y: 4.500000
-      z: 0.0
-- frame_id: map
-  name: wp08_-3.421_3.100
+  name: wp04_-3.421_3.100
   pose:
     orientation:
       w: 1.000000
@@ -106,16 +58,4 @@ waypoints:
     position:
       x: -3.421421
       y: 3.100000
-      z: 0.0
-- frame_id: map
-  name: wp09_-2.989_1.600
-  pose:
-    orientation:
-      w: 0.000000
-      x: 0.0
-      y: 0.0
-      z: 1.000000
-    position:
-      x: -2.989289
-      y: 1.600000
       z: 0.0
