@@ -3,10 +3,10 @@ waypoints:
   name: wp00_-2.800_0.100
   pose:
     orientation:
-      w: 0.582772
+      w: 1.000000
       x: 0.0
       y: 0.0
-      z: -0.812636
+      z: 0.000000
     position:
       x: -2.800000
       y: 0.100000
@@ -15,10 +15,10 @@ waypoints:
   name: wp01_-3.545_-2.100
   pose:
     orientation:
-      w: 0.766136
+      w: 0.000000
       x: 0.0
       y: 0.0
-      z: -0.642679
+      z: 1.000000
     position:
       x: -3.545025
       y: -2.100000
@@ -27,10 +27,10 @@ waypoints:
   name: wp02_-3.083_-4.717
   pose:
     orientation:
-      w: 0.816815
+      w: 0.880791
       x: 0.0
       y: 0.0
-      z: -0.576900
+      z: -0.473504
     position:
       x: -3.082771
       y: -4.717229
@@ -39,10 +39,10 @@ waypoints:
   name: wp03_-1.741_-8.500
   pose:
     orientation:
-      w: 0.962572
+      w: 1.000000
       x: 0.0
       y: 0.0
-      z: 0.271026
+      z: 0.000000
     position:
       x: -1.740660
       y: -8.500000
@@ -51,10 +51,10 @@ waypoints:
   name: wp04_1.700_-6.396
   pose:
     orientation:
-      w: 0.505318
+      w: 0.707107
       x: 0.0
       y: 0.0
-      z: 0.862933
+      z: 0.707107
     position:
       x: 1.700000
       y: -6.395635
@@ -63,10 +63,10 @@ waypoints:
   name: wp05_-0.200_-3.009
   pose:
     orientation:
-      w: 0.714522
+      w: 0.707107
       x: 0.0
       y: 0.0
-      z: 0.699613
+      z: 0.707107
     position:
       x: -0.200000
       y: -3.009188
@@ -75,10 +75,10 @@ waypoints:
   name: wp06_-0.100_1.733
   pose:
     orientation:
-      w: 0.423830
+      w: 0.707107
       x: 0.0
       y: 0.0
-      z: 0.905742
+      z: 0.707107
     position:
       x: -0.100000
       y: 1.732893
@@ -87,10 +87,10 @@ waypoints:
   name: wp07_-2.409_4.500
   pose:
     orientation:
-      w: 0.455039
+      w: 0.000000
       x: 0.0
       y: 0.0
-      z: -0.890471
+      z: 1.000000
     position:
       x: -2.409289
       y: 4.500000
@@ -99,10 +99,10 @@ waypoints:
   name: wp08_-3.421_3.100
   pose:
     orientation:
-      w: 0.799009
+      w: 1.000000
       x: 0.0
       y: 0.0
-      z: -0.601320
+      z: 0.000000
     position:
       x: -3.421421
       y: 3.100000
@@ -111,10 +111,10 @@ waypoints:
   name: wp09_-2.989_1.600
   pose:
     orientation:
-      w: 0.750067
+      w: 0.000000
       x: 0.0
       y: 0.0
-      z: -0.661362
+      z: 1.000000
     position:
       x: -2.989289
       y: 1.600000

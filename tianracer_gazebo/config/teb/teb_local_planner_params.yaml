@@ -68,8 +68,12 @@ TebLocalPlannerROS:
     type: "polygon"
     vertices: [[0.18, 0.10], [0.18, -0.10], [-0.18, -0.10], [-0.18, 0.10]]
 
-  xy_goal_tolerance: 0.2
-  yaw_goal_tolerance: 0.1
+  xy_goal_tolerance: 0.3
+  yaw_goal_tolerance: 3.15
+  # ↑ 原先 0.2 / 0.1。0.1 rad = 5.7°，阿克曼车在 0.95 m 走廊里几乎不可能精确达到，
+  #   会导致 waypoint_laps 的第一个航点（allow_early=False，必须 SUCCEEDED）永远不成功，
+  #   最终 move_base ABORT -> waypoint_laps 整个退出 -> 小车停在原地不再前进。
+  #   路线是由航点顺序和全局路径决定的，终点朝向对跑圈没有意义，直接放开。
   #自由目标速度。设为False时，车辆到达终点时的目标速度为0。
   #TEB是时间最优规划器。缺少目标速度约束将导致车辆“全速冲线”
   free_goal_vel: True
