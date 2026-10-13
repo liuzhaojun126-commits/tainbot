@@ -38,7 +38,7 @@ TebLocalPlannerROS:
   max_vel_x_backwards: 1
   max_vel_theta: 5.0      # 最大角速度 rad/s；实测最急弯半径 0.77 m，5.0×0.77=3.85 m/s 时横向加速度 1.96g，正好在轮胎 2g 抓地极限内
   acc_lim_x: 7.0          # 线加速度上限 m/s^2；直道/出弯快速加速（抓地极限约 19.6，弯中 TEB 自动减速，7 留稳定余量）
-  acc_lim_theta: 7.0      # 角加速度上限 rad/s^2；发卡弯更快打/回方向，7 避免转向伺服超调画蛇
+  acc_lim_theta: 8.0      # 角加速度上限 rad/s^2；发卡弯更快打/回方向（原 7.0，本步单变量上调）
 
   #仅适用于全向轮
   # max_vel_y (double, default: 0.0)
