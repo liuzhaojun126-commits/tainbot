@@ -34,7 +34,7 @@ TebLocalPlannerROS:
   publish_feedback: False
 
   # Robot
-  max_vel_x: 6.0          # 直道极速 m/s；急弯速度由 max_vel_theta 独立卡在 3.85。直道仅 3~4 m，6 已能达到理论极速（再高无收益、徒增冲弯风险）
+  max_vel_x: 6.5          # 直道极速 m/s（原 6.0）。直道 3~4 m、acc_lim_x 7.0 下 3 m 内可达 6.5；弯道仍由 max_vel_theta 独立限速
   max_vel_x_backwards: 1
   max_vel_theta: 5.5      # 最大角速度 rad/s。实测最急弯半径 0.56 m，5.5×0.56=3.08 m/s 时横向加速度 1.90g，留 5% 抓地余量（5.9 顶满 2g 无余量，队友反馈激进会不稳，故留余量）
   acc_lim_x: 7.0          # 线加速度上限 m/s^2；直道/出弯快速加速（抓地极限约 19.6，弯中 TEB 自动减速，7 留稳定余量）
