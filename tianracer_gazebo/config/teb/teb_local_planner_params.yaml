@@ -34,11 +34,11 @@ TebLocalPlannerROS:
   publish_feedback: False
 
   # Robot
-  max_vel_x: 4.0          # 最大前进速度 m/s（走廊仅 0.95 m，5 m/s 过弯会超出轮胎抓地极限）
+  max_vel_x: 5.0          # 最大前进速度 m/s（原 4.0）。直道用；过弯速度由 max_vel_theta 独立限住
   max_vel_x_backwards: 1
-  max_vel_theta: 5.0      # 最大角速度 rad/s；实测最急弯半径 0.77 m，5.0×0.77=3.85 m/s 时横向加速度 1.96g，正好在轮胎 2g 抓地极限内
-  acc_lim_x: 4.0          # 线加速度上限 m/s^2（原 1.8）；0→5 m/s 约需 3.1 m
-  acc_lim_theta: 6.0      # 角加速度上限 rad/s^2（原 3.6）
+  max_vel_theta: 5.0      # 最大角速度 rad/s；实测最急弯半径 0.77 m，5.0×0.77=3.85 m/s 时横向加速度 1.96g，正好在轮胎 2g 抓地极限内。绝对不要动
+  acc_lim_x: 6.0          # 线加速度上限 m/s^2（原 4.0）；提速主要靠出弯与直道加速更快
+  acc_lim_theta: 8.0      # 角加速度上限 rad/s^2（原 6.0）；发卡弯打方向更快、回正更快
 
   #仅适用于全向轮
   # max_vel_y (double, default: 0.0)
@@ -107,7 +107,7 @@ TebLocalPlannerROS:
   weight_kinematics_nh: 100
   weight_kinematics_forward_drive: 100 #1
   weight_kinematics_turning_radius: 100 #1
-  weight_optimaltime: 1.5 # 时间最优权重（航点已把路线钉死，可以适度抢时间）
+  weight_optimaltime: 2.0 # 时间最优权重（原 1.5）；让 TEB 更积极抢时间，路线已被航点钉死
   weight_shortest_path: 0
   weight_obstacle: 30 # 避障权重（走廊仅 0.95 m，50 会让左右墙互相推挤、车画蛇）
   weight_inflation: 1 # 配合局部代价地图 0.20 膨胀半径
