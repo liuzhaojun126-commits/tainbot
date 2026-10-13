@@ -18,7 +18,7 @@ from waypoint_race import utils
 
 
 class WaypointLaps:
-    def __init__(self, filename, laps=5, switch_distance=0.5, goal_timeout=120.0):
+    def __init__(self, filename, laps=5, switch_distance=0.8, goal_timeout=120.0):
         if isinstance(laps, bool) or not isinstance(laps, int) or laps < 1:
             raise ValueError('laps must be a positive integer')
         if not math.isfinite(switch_distance) or switch_distance < 0:
@@ -135,7 +135,7 @@ def main():
         filename = os.path.join(rospkg.RosPack().get_path('tianracer_gazebo'),
                                 'scripts', 'waypoint_race', world + '_points.yaml')
     race = WaypointLaps(filename, rospy.get_param('~laps', 5),
-                        rospy.get_param('~switch_distance', 0.5),
+                        rospy.get_param('~switch_distance', 0.8),
                         rospy.get_param('~goal_timeout', 120.0))
     if race.spin():
         rospy.loginfo('Finished all %d laps', race.completed_laps)
