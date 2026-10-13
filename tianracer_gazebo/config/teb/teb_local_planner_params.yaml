@@ -107,7 +107,7 @@ TebLocalPlannerROS:
   weight_kinematics_nh: 100
   weight_kinematics_forward_drive: 100 #1
   weight_kinematics_turning_radius: 100 #1
-  weight_optimaltime: 2.0 # 时间最优权重（航点已把路线钉死，积极抢时间）
+  weight_optimaltime: 3.0 # 时间最优权重（原 2.0）。平均圈速仅 1.9 m/s、远低于弯道限速 2.8~3.0，说明 TEB 没在抢时间，上调到 3.0 让它用满速度预算
   weight_shortest_path: 0
   weight_obstacle: 30 # 避障权重（走廊仅 0.95 m，50 会让左右墙互相推挤、车画蛇）
   weight_inflation: 1 # 配合局部代价地图 0.20 膨胀半径
