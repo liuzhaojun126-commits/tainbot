@@ -21,7 +21,7 @@ local_costmap:
   inflation_layer:
     enabled:              true
     cost_scaling_factor:  10.0  # exponential rate at which the obstacle cost drops off (default: 10)
-    inflation_radius:     0.30  # max. distance from an obstacle at which costs are incurred for planning paths.（原 0.08，走廊仅 0.95 m，需要足够的排斥力把车压在中间）
+    inflation_radius:     0.20  # max. distance from an obstacle at which costs are incurred for planning paths.（走廊半宽仅 0.475 m，过大会让走廊"看起来"被堵死）
 
 
 

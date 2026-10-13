@@ -1,49 +1,289 @@
 waypoints:
 - frame_id: map
-  name: -2.8413727283477783_0.09140300750732422
+  name: wp00_-2.800_0.100
   pose:
     orientation:
-      w: 0.9975093209387971
+      w: 0.946738
       x: 0.0
       y: 0.0
-      z: -0.07053477610526564
+      z: -0.322006
     position:
-      x: -2.8413727283477783
-      y: 0.09140300750732422
+      x: -2.800000
+      y: 0.100000
       z: 0.0
 - frame_id: map
-  name: -2.0062530040740967_-8.523871421813965
+  name: wp01_-1.500_-0.900
   pose:
     orientation:
-      w: 0.9997803353472037
+      w: 0.346946
       x: 0.0
       y: 0.0
-      z: 0.0209590327313298
+      z: -0.937885
     position:
-      x: -2.0062530040740967
-      y: -8.523871421813965
+      x: -1.500000
+      y: -0.900000
       z: 0.0
 - frame_id: map
-  name: 1.836294412612915_-6.028190612792969
+  name: wp02_-2.900_-2.100
   pose:
     orientation:
-      w: 0.668089313636696
+      w: 0.207591
       x: 0.0
       y: 0.0
-      z: 0.7440810903419388
+      z: -0.978216
     position:
-      x: 1.836294412612915
-      y: -6.028190612792969
+      x: -2.900000
+      y: -2.100000
       z: 0.0
 - frame_id: map
-  name: -0.12209534645080566_0.02562737464904785
+  name: wp03_-4.700_-2.900
   pose:
     orientation:
-      w: 0.7016362749625642
+      w: 0.811242
       x: 0.0
       y: 0.0
-      z: 0.7125352887097292
+      z: -0.584710
     position:
-      x: -0.12209534645080566
-      y: 0.02562737464904785
+      x: -4.700000
+      y: -2.900000
+      z: 0.0
+- frame_id: map
+  name: wp04_-4.200_-4.400
+  pose:
+    orientation:
+      w: 0.931975
+      x: 0.0
+      y: 0.0
+      z: -0.362523
+    position:
+      x: -4.200000
+      y: -4.400000
+      z: 0.0
+- frame_id: map
+  name: wp05_-3.000_-5.500
+  pose:
+    orientation:
+      w: 0.707107
+      x: 0.0
+      y: 0.0
+      z: -0.707107
+    position:
+      x: -3.000000
+      y: -5.500000
+      z: 0.0
+- frame_id: map
+  name: wp06_-3.000_-7.500
+  pose:
+    orientation:
+      w: 0.946738
+      x: 0.0
+      y: 0.0
+      z: -0.322006
+    position:
+      x: -3.000000
+      y: -7.500000
+      z: 0.0
+- frame_id: map
+  name: wp07_-1.700_-8.500
+  pose:
+    orientation:
+      w: 0.987087
+      x: 0.0
+      y: 0.0
+      z: 0.160182
+    position:
+      x: -1.700000
+      y: -8.500000
+      z: 0.0
+- frame_id: map
+  name: wp08_0.100_-7.900
+  pose:
+    orientation:
+      w: 0.967361
+      x: 0.0
+      y: 0.0
+      z: 0.253401
+    position:
+      x: 0.100000
+      y: -7.900000
+      z: 0.0
+- frame_id: map
+  name: wp09_1.700_-7.000
+  pose:
+    orientation:
+      w: 0.707107
+      x: 0.0
+      y: 0.0
+      z: 0.707107
+    position:
+      x: 1.700000
+      y: -7.000000
+      z: 0.0
+- frame_id: map
+  name: wp10_1.700_-5.000
+  pose:
+    orientation:
+      w: 0.218153
+      x: 0.0
+      y: 0.0
+      z: 0.975915
+    position:
+      x: 1.700000
+      y: -5.000000
+      z: 0.0
+- frame_id: map
+  name: wp11_0.000_-4.200
+  pose:
+    orientation:
+      w: 0.688274
+      x: 0.0
+      y: 0.0
+      z: 0.725451
+    position:
+      x: 0.000000
+      y: -4.200000
+      z: 0.0
+- frame_id: map
+  name: wp12_-0.100_-2.300
+  pose:
+    orientation:
+      w: 0.707107
+      x: 0.0
+      y: 0.0
+      z: 0.707107
+    position:
+      x: -0.100000
+      y: -2.300000
+      z: 0.0
+- frame_id: map
+  name: wp13_-0.100_-0.300
+  pose:
+    orientation:
+      w: 0.707107
+      x: 0.0
+      y: 0.0
+      z: 0.707107
+    position:
+      x: -0.100000
+      y: -0.300000
+      z: 0.0
+- frame_id: map
+  name: wp14_-0.100_1.700
+  pose:
+    orientation:
+      w: 0.707107
+      x: 0.0
+      y: 0.0
+      z: 0.707107
+    position:
+      x: -0.100000
+      y: 1.700000
+      z: 0.0
+- frame_id: map
+  name: wp15_-0.100_3.800
+  pose:
+    orientation:
+      w: 0.204747
+      x: 0.0
+      y: 0.0
+      z: 0.978815
+    position:
+      x: -0.100000
+      y: 3.800000
+      z: 0.0
+- frame_id: map
+  name: wp16_-1.700_4.500
+  pose:
+    orientation:
+      w: 0.024977
+      x: 0.0
+      y: 0.0
+      z: 0.999688
+    position:
+      x: -1.700000
+      y: 4.500000
+      z: 0.0
+- frame_id: map
+  name: wp17_-3.700_4.600
+  pose:
+    orientation:
+      w: 0.424155
+      x: 0.0
+      y: 0.0
+      z: -0.905589
+    position:
+      x: -3.700000
+      y: 4.600000
+      z: 0.0
+- frame_id: map
+  name: wp18_-4.700_3.400
+  pose:
+    orientation:
+      w: 0.996936
+      x: 0.0
+      y: 0.0
+      z: -0.078221
+    position:
+      x: -4.700000
+      y: 3.400000
+      z: 0.0
+- frame_id: map
+  name: wp19_-2.800_3.100
+  pose:
+    orientation:
+      w: 0.970143
+      x: 0.0
+      y: 0.0
+      z: -0.242536
+    position:
+      x: -2.800000
+      y: 3.100000
+      z: 0.0
+- frame_id: map
+  name: wp20_-1.300_2.300
+  pose:
+    orientation:
+      w: 0.204747
+      x: 0.0
+      y: 0.0
+      z: -0.978815
+    position:
+      x: -1.300000
+      y: 2.300000
+      z: 0.0
+- frame_id: map
+  name: wp21_-2.900_1.600
+  pose:
+    orientation:
+      w: 0.103562
+      x: 0.0
+      y: 0.0
+      z: -0.994623
+    position:
+      x: -2.900000
+      y: 1.600000
+      z: 0.0
+- frame_id: map
+  name: wp22_-4.800_1.200
+  pose:
+    orientation:
+      w: 0.931975
+      x: 0.0
+      y: 0.0
+      z: -0.362523
+    position:
+      x: -4.800000
+      y: 1.200000
+      z: 0.0
+- frame_id: map
+  name: wp23_-3.600_0.100
+  pose:
+    orientation:
+      w: 1.000000
+      x: 0.0
+      y: 0.0
+      z: 0.000000
+    position:
+      x: -3.600000
+      y: 0.100000
       z: 0.0

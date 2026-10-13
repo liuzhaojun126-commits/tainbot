@@ -1,5 +1,9 @@
 shutdown_costmaps: false #当move_base在不活动状态时,是否关掉costmap
 
+#阿克曼车无法原地旋转。必须关掉 move_base 的"原地清障旋转"恢复行为，
+#否则局部规划失败时会下发纯角速度指令，车只会前轮空转、白等 3 秒（表现为"很慢"）
+clearing_rotation_allowed: false
+
 controller_frequency: 15.0 #向底盘控制移动话题cmd_vel发送命令的频率.（原 5.0；5 m/s 时 5 Hz 意味着每个控制周期车走 1 m）
 controller_patience: 3.0
 
