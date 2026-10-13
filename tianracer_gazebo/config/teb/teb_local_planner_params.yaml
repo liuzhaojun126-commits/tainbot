@@ -23,7 +23,7 @@ TebLocalPlannerROS:
   #(仅在机器人配备了后部传感器的情况下才建议这样做）
   allow_init_with_backwards_motion: False
 
-  global_plan_viapoint_sep: -1
+  global_plan_viapoint_sep: 0.30
 
   #参数在TebLocalPlannerROS::pruneGlobalPlan()函数中被使用
   #该参数决定了从机器人当前位置的后面一定距离开始裁剪
@@ -34,7 +34,7 @@ TebLocalPlannerROS:
   publish_feedback: False
 
   # Robot
-  max_vel_x: 5.0          # 最大前进速度 m/s（原 1.8）
+  max_vel_x: 4.0          # 最大前进速度 m/s（走廊仅 0.95 m，5 m/s 过弯会超出轮胎抓地极限）
   max_vel_x_backwards: 1
   max_vel_theta: 6.0      # 最大角速度 rad/s（原 3.6）；5 m/s 时受它限制可达半径 v/ω = 0.83 m
   acc_lim_x: 4.0          # 线加速度上限 m/s^2（原 1.8）；0→5 m/s 约需 3.1 m
@@ -77,7 +77,7 @@ TebLocalPlannerROS:
   # complete_global_plan: True
   # Obstacles
 
-  min_obstacle_dist: 0.2 # 与障碍的最小期望距离,
+  min_obstacle_dist: 0.30 # 与障碍的最小期望距离,（原 0.2；走廊半宽仅 0.475 m，0.30 可把车压在中间）
   include_costmap_obstacles: True #应否考虑到局部costmap的障碍设置为True后才能规避实时探测到的、建图时不存在的障碍物。
   costmap_obstacles_behind_robot_dist: 2.0 #考虑后面n米内的障碍物2.0
   obstacle_poses_affected: 30 #为了保持距离，每个障碍物位置都与轨道上最近的位置相连。
@@ -96,14 +96,15 @@ TebLocalPlannerROS:
   weight_max_vel_theta: 2
   weight_acc_lim_x: 2
   weight_acc_lim_y: 0.1
-  weight_acc_lim_theta: 2 #1
+  weight_acc_lim_theta: 6 # 原 2；加大 → 转向更平滑，抑制走廊里左右画蛇
   weight_kinematics_nh: 100
   weight_kinematics_forward_drive: 100 #1
   weight_kinematics_turning_radius: 100 #1
-  weight_optimaltime: 2.0
+  weight_optimaltime: 1.0 # 原 2.0；降低 → 不再贴着约束极限切弯抢时间
   weight_shortest_path: 0
-  weight_obstacle: 10 #50
-  weight_inflation: 1
+  weight_obstacle: 50 # 原 10；加大 → 强制远离墙壁
+  weight_inflation: 2 # 原 1；配合局部代价地图 0.30 膨胀半径
+  weight_viapoint: 1.0 # 新增；配合 global_plan_viapoint_sep 让车贴着全局路径走，而不是切弯
   weight_dynamic_obstacle: 1 # not in use yet
   # alternative_time_cost: False # not in use yet
   selection_alternative_time_cost: True
