@@ -1,0 +1,27 @@
+<launch>
+  <!-- 计时赛方案一：离线赛车线 + Pure Pursuit（不启动 move_base / AMCL）。
+       先启动本文件，再另行 roslaunch tianracer_sim_referee referee.launch。 -->
+  <arg name="robot_name" default="$(optenv TIANRACER_NAME tianracer)"/>
+  <arg name="world" default="$(optenv TIANRACER_WORLD tianracer_racetrack)"/>
+  <arg name="laps" default="5"/>
+  <arg name="track_file"
+       default="$(find tianracer_gazebo)/scripts/waypoint_race/racing_line.csv"/>
+
+  <!-- Gazebo 仿真环境与赛道（车默认在 (0,0)、yaw 1.54） -->
+  <include file="$(find tianracer_gazebo)/launch/tianracer_on_racetrack.launch">
+    <arg name="world" value="$(arg world)"/>
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
+
+  <!-- 车辆底层控制（servo_commands 订阅 ackermann_cmd_stamped；gazebo_odometry 发 odom） -->
+  <include file="$(find tianracer_gazebo)/launch/tianracer_control.launch">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
+
+  <!-- Pure Pursuit 纯跟踪赛车节点 -->
+  <node pkg="tianracer_gazebo" type="racing_pure_pursuit.py"
+        name="racing_pure_pursuit" ns="$(arg robot_name)" output="screen">
+    <param name="track_file" value="$(arg track_file)"/>
+    <param name="laps" type="int" value="$(arg laps)"/>
+  </node>
+</launch>
