@@ -7,13 +7,8 @@ TebLocalPlannerROS:
   # Trajectoty 这部分主要是用于调整轨迹
 
   teb_autosize: True #优化期间允许改变轨迹的时域长度
-  dt_ref: 0.12 #期望的轨迹时间分辨率。注意 TEB 轨迹的"空间采样间隔" = dt_ref × 车速：
-               #  原配置 dt_ref=0.3、车速 1.8 m/s -> 间隔 0.54 m，0.95 m 走廊够用
-               #  提速到 4 m/s 后 dt_ref=0.25   -> 间隔 1.00 m，比走廊还宽，
-               #  TEB 只在采样点上检查 min_obstacle_dist，采样点之间就会切穿墙 ——
-               #  这就是"红线几乎都是直线、而且会穿墙"的原因。
-               #  按车速等比缩到 0.12 -> 4 m/s 时间隔 0.48 m，恢复到原来水平。
-  dt_hysteresis: 0.02 #建议取 dt_ref 的 10%
+  dt_ref: 0.3 #期望的轨迹时间分辨率
+  dt_hysteresis: 0.03 #根据当前时间分辨率自动调整大小的滞后现象，通常约为。建议使用dt ref的10%
 
   #覆盖全局规划器提供的局部子目标的方向;规划局部路径时会覆盖掉全局路径点的方位角,
   #对于车辆的2D规划,可以设置为False,可实现对全局路径的更好跟踪。
@@ -98,8 +93,8 @@ TebLocalPlannerROS:
 
   # Optimization
 
-  no_inner_iterations: 4 #原 3。dt_ref 减半后轨迹采样点翻倍，单周期耗时上升，故迭代只小幅上调
-  no_outer_iterations: 3 #原 2
+  no_inner_iterations: 3
+  no_outer_iterations: 2
   optimization_activate: True
   optimization_verbose: False
   penalty_epsilon: 0.1
@@ -116,7 +111,7 @@ TebLocalPlannerROS:
   weight_shortest_path: 0
   weight_obstacle: 30 # 避障权重（走廊仅 0.95 m，50 会让左右墙互相推挤、车画蛇）
   weight_inflation: 1 # 配合局部代价地图 0.20 膨胀半径
-  weight_viapoint: 2.0 #原 1.0；加大让红线更贴合绿色全局路径（用户要求拟合更好），也让轨迹更稳定
+  weight_viapoint: 1.0 # 配合 global_plan_viapoint_sep，让车贴着全局路径走而不是切弯
   weight_dynamic_obstacle: 1 # not in use yet
   # alternative_time_cost: False # not in use yet
   selection_alternative_time_cost: True
