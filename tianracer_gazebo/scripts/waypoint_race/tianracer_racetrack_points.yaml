@@ -12,55 +12,43 @@ waypoints:
       y: 0.100000
       z: 0.0
 - frame_id: map
-  name: wp01_-3.545_-2.100
+  name: wp01_-4.495_-2.695
   pose:
     orientation:
-      w: 0.000000
+      w: 0.382683
       x: 0.0
       y: 0.0
-      z: 1.000000
+      z: -0.923880
     position:
-      x: -3.545025
-      y: -2.100000
+      x: -4.494607
+      y: -2.694607
       z: 0.0
 - frame_id: map
-  name: wp02_-3.083_-4.717
-  pose:
-    orientation:
-      w: 0.880791
-      x: 0.0
-      y: 0.0
-      z: -0.473504
-    position:
-      x: -3.082771
-      y: -4.717229
-      z: 0.0
-- frame_id: map
-  name: wp03_-1.741_-8.500
-  pose:
-    orientation:
-      w: 1.000000
-      x: 0.0
-      y: 0.0
-      z: 0.000000
-    position:
-      x: -1.740660
-      y: -8.500000
-      z: 0.0
-- frame_id: map
-  name: wp04_1.700_-6.396
+  name: wp02_-3.000_-7.075
   pose:
     orientation:
       w: 0.707107
       x: 0.0
       y: 0.0
-      z: 0.707107
+      z: -0.707107
     position:
-      x: 1.700000
-      y: -6.395635
+      x: -3.000000
+      y: -7.074695
       z: 0.0
 - frame_id: map
-  name: wp05_-0.200_-3.009
+  name: wp03_1.352_-7.448
+  pose:
+    orientation:
+      w: 0.967032
+      x: 0.0
+      y: 0.0
+      z: 0.254655
+    position:
+      x: 1.352449
+      y: -7.447551
+      z: 0.0
+- frame_id: map
+  name: wp04_-0.200_-3.009
   pose:
     orientation:
       w: 0.707107
@@ -72,7 +60,7 @@ waypoints:
       y: -3.009188
       z: 0.0
 - frame_id: map
-  name: wp06_-0.100_1.733
+  name: wp05_-0.100_2.929
   pose:
     orientation:
       w: 0.707107
@@ -81,41 +69,29 @@ waypoints:
       z: 0.707107
     position:
       x: -0.100000
-      y: 1.732893
+      y: 2.928769
       z: 0.0
 - frame_id: map
-  name: wp07_-2.409_4.500
+  name: wp06_-4.625_4.275
   pose:
     orientation:
-      w: 0.000000
+      w: 0.450435
       x: 0.0
       y: 0.0
-      z: 1.000000
+      z: -0.892809
     position:
-      x: -2.409289
-      y: 4.500000
+      x: -4.625000
+      y: 4.275000
       z: 0.0
 - frame_id: map
-  name: wp08_-3.421_3.100
+  name: wp07_-1.793_1.600
   pose:
     orientation:
-      w: 1.000000
+      w: 0.119288
       x: 0.0
       y: 0.0
-      z: 0.000000
+      z: -0.992860
     position:
-      x: -3.421421
-      y: 3.100000
-      z: 0.0
-- frame_id: map
-  name: wp09_-2.989_1.600
-  pose:
-    orientation:
-      w: 0.000000
-      x: 0.0
-      y: 0.0
-      z: 1.000000
-    position:
-      x: -2.989289
+      x: -1.793414
       y: 1.600000
       z: 0.0
