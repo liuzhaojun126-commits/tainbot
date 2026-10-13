@@ -7,8 +7,13 @@ TebLocalPlannerROS:
   # Trajectoty 这部分主要是用于调整轨迹
 
   teb_autosize: True #优化期间允许改变轨迹的时域长度
-  dt_ref: 0.25 #期望的轨迹时间分辨率（原 0.3；调小让轨迹采样更细，cmd_vel 更连续、不抖）
-  dt_hysteresis: 0.03 #根据当前时间分辨率自动调整大小的滞后现象，通常约为。建议使用dt ref的10%
+  dt_ref: 0.12 #期望的轨迹时间分辨率。注意 TEB 轨迹的"空间采样间隔" = dt_ref × 车速：
+               #  原配置 dt_ref=0.3、车速 1.8 m/s -> 间隔 0.54 m，0.95 m 走廊够用
+               #  提速到 4 m/s 后 dt_ref=0.25   -> 间隔 1.00 m，比走廊还宽，
+               #  TEB 只在采样点上检查 min_obstacle_dist，采样点之间就会切穿墙 ——
+               #  这就是"红线几乎都是直线、而且会穿墙"的原因。
+               #  按车速等比缩到 0.12 -> 4 m/s 时间隔 0.48 m，恢复到原来水平。
+  dt_hysteresis: 0.02 #建议取 dt_ref 的 10%
 
   #覆盖全局规划器提供的局部子目标的方向;规划局部路径时会覆盖掉全局路径点的方位角,
   #对于车辆的2D规划,可以设置为False,可实现对全局路径的更好跟踪。
@@ -93,7 +98,7 @@ TebLocalPlannerROS:
 
   # Optimization
 
-  no_inner_iterations: 5 #原 3。迭代不足时优化器每个周期收敛到不同局部解，红线就会抖
+  no_inner_iterations: 4 #原 3。dt_ref 减半后轨迹采样点翻倍，单周期耗时上升，故迭代只小幅上调
   no_outer_iterations: 3 #原 2
   optimization_activate: True
   optimization_verbose: False
