@@ -23,7 +23,7 @@ TebLocalPlannerROS:
   #(仅在机器人配备了后部传感器的情况下才建议这样做）
   allow_init_with_backwards_motion: False
 
-  global_plan_viapoint_sep: 0.30
+  global_plan_viapoint_sep: 0.50
 
   #参数在TebLocalPlannerROS::pruneGlobalPlan()函数中被使用
   #该参数决定了从机器人当前位置的后面一定距离开始裁剪

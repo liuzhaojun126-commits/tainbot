@@ -4,7 +4,7 @@ shutdown_costmaps: false #当move_base在不活动状态时,是否关掉costmap
 #否则局部规划失败时会下发纯角速度指令，车只会前轮空转、白等 3 秒（表现为"很慢"）
 clearing_rotation_allowed: false
 
-controller_frequency: 15.0 #向底盘控制移动话题cmd_vel发送命令的频率.（原 5.0；5 m/s 时 5 Hz 意味着每个控制周期车走 1 m）
+controller_frequency: 10.0 #向底盘控制移动话题cmd_vel发送命令的频率. 15 Hz 时 TEB 常来不及在 66 ms 内求解完，控制器报失败会造成一卡一卡；10 Hz 更稳
 controller_patience: 3.0
 
 planner_frequency: 0.5

@@ -3,287 +3,119 @@ waypoints:
   name: wp00_-2.800_0.100
   pose:
     orientation:
-      w: 0.946738
+      w: 0.582772
       x: 0.0
       y: 0.0
-      z: -0.322006
+      z: -0.812636
     position:
       x: -2.800000
       y: 0.100000
       z: 0.0
 - frame_id: map
-  name: wp01_-1.500_-0.900
+  name: wp01_-3.545_-2.100
   pose:
     orientation:
-      w: 0.346946
+      w: 0.766136
       x: 0.0
       y: 0.0
-      z: -0.937885
+      z: -0.642679
     position:
-      x: -1.500000
-      y: -0.900000
-      z: 0.0
-- frame_id: map
-  name: wp02_-2.900_-2.100
-  pose:
-    orientation:
-      w: 0.207591
-      x: 0.0
-      y: 0.0
-      z: -0.978216
-    position:
-      x: -2.900000
+      x: -3.545025
       y: -2.100000
       z: 0.0
 - frame_id: map
-  name: wp03_-4.700_-2.900
+  name: wp02_-3.083_-4.717
   pose:
     orientation:
-      w: 0.811242
+      w: 0.816815
       x: 0.0
       y: 0.0
-      z: -0.584710
+      z: -0.576900
     position:
-      x: -4.700000
-      y: -2.900000
+      x: -3.082771
+      y: -4.717229
       z: 0.0
 - frame_id: map
-  name: wp04_-4.200_-4.400
+  name: wp03_-1.741_-8.500
   pose:
     orientation:
-      w: 0.931975
+      w: 0.962572
       x: 0.0
       y: 0.0
-      z: -0.362523
+      z: 0.271026
     position:
-      x: -4.200000
-      y: -4.400000
-      z: 0.0
-- frame_id: map
-  name: wp05_-3.000_-5.500
-  pose:
-    orientation:
-      w: 0.707107
-      x: 0.0
-      y: 0.0
-      z: -0.707107
-    position:
-      x: -3.000000
-      y: -5.500000
-      z: 0.0
-- frame_id: map
-  name: wp06_-3.000_-7.500
-  pose:
-    orientation:
-      w: 0.946738
-      x: 0.0
-      y: 0.0
-      z: -0.322006
-    position:
-      x: -3.000000
-      y: -7.500000
-      z: 0.0
-- frame_id: map
-  name: wp07_-1.700_-8.500
-  pose:
-    orientation:
-      w: 0.987087
-      x: 0.0
-      y: 0.0
-      z: 0.160182
-    position:
-      x: -1.700000
+      x: -1.740660
       y: -8.500000
       z: 0.0
 - frame_id: map
-  name: wp08_0.100_-7.900
+  name: wp04_1.700_-6.396
   pose:
     orientation:
-      w: 0.967361
+      w: 0.505318
       x: 0.0
       y: 0.0
-      z: 0.253401
-    position:
-      x: 0.100000
-      y: -7.900000
-      z: 0.0
-- frame_id: map
-  name: wp09_1.700_-7.000
-  pose:
-    orientation:
-      w: 0.707107
-      x: 0.0
-      y: 0.0
-      z: 0.707107
+      z: 0.862933
     position:
       x: 1.700000
-      y: -7.000000
+      y: -6.395635
       z: 0.0
 - frame_id: map
-  name: wp10_1.700_-5.000
+  name: wp05_-0.200_-3.009
   pose:
     orientation:
-      w: 0.218153
+      w: 0.714522
       x: 0.0
       y: 0.0
-      z: 0.975915
+      z: 0.699613
     position:
-      x: 1.700000
-      y: -5.000000
+      x: -0.200000
+      y: -3.009188
       z: 0.0
 - frame_id: map
-  name: wp11_0.000_-4.200
+  name: wp06_-0.100_1.733
   pose:
     orientation:
-      w: 0.688274
+      w: 0.423830
       x: 0.0
       y: 0.0
-      z: 0.725451
-    position:
-      x: 0.000000
-      y: -4.200000
-      z: 0.0
-- frame_id: map
-  name: wp12_-0.100_-2.300
-  pose:
-    orientation:
-      w: 0.707107
-      x: 0.0
-      y: 0.0
-      z: 0.707107
+      z: 0.905742
     position:
       x: -0.100000
-      y: -2.300000
+      y: 1.732893
       z: 0.0
 - frame_id: map
-  name: wp13_-0.100_-0.300
+  name: wp07_-2.409_4.500
   pose:
     orientation:
-      w: 0.707107
+      w: 0.455039
       x: 0.0
       y: 0.0
-      z: 0.707107
+      z: -0.890471
     position:
-      x: -0.100000
-      y: -0.300000
-      z: 0.0
-- frame_id: map
-  name: wp14_-0.100_1.700
-  pose:
-    orientation:
-      w: 0.707107
-      x: 0.0
-      y: 0.0
-      z: 0.707107
-    position:
-      x: -0.100000
-      y: 1.700000
-      z: 0.0
-- frame_id: map
-  name: wp15_-0.100_3.800
-  pose:
-    orientation:
-      w: 0.204747
-      x: 0.0
-      y: 0.0
-      z: 0.978815
-    position:
-      x: -0.100000
-      y: 3.800000
-      z: 0.0
-- frame_id: map
-  name: wp16_-1.700_4.500
-  pose:
-    orientation:
-      w: 0.024977
-      x: 0.0
-      y: 0.0
-      z: 0.999688
-    position:
-      x: -1.700000
+      x: -2.409289
       y: 4.500000
       z: 0.0
 - frame_id: map
-  name: wp17_-3.700_4.600
+  name: wp08_-3.421_3.100
   pose:
     orientation:
-      w: 0.424155
+      w: 0.799009
       x: 0.0
       y: 0.0
-      z: -0.905589
+      z: -0.601320
     position:
-      x: -3.700000
-      y: 4.600000
-      z: 0.0
-- frame_id: map
-  name: wp18_-4.700_3.400
-  pose:
-    orientation:
-      w: 0.996936
-      x: 0.0
-      y: 0.0
-      z: -0.078221
-    position:
-      x: -4.700000
-      y: 3.400000
-      z: 0.0
-- frame_id: map
-  name: wp19_-2.800_3.100
-  pose:
-    orientation:
-      w: 0.970143
-      x: 0.0
-      y: 0.0
-      z: -0.242536
-    position:
-      x: -2.800000
+      x: -3.421421
       y: 3.100000
       z: 0.0
 - frame_id: map
-  name: wp20_-1.300_2.300
+  name: wp09_-2.989_1.600
   pose:
     orientation:
-      w: 0.204747
+      w: 0.750067
       x: 0.0
       y: 0.0
-      z: -0.978815
+      z: -0.661362
     position:
-      x: -1.300000
-      y: 2.300000
-      z: 0.0
-- frame_id: map
-  name: wp21_-2.900_1.600
-  pose:
-    orientation:
-      w: 0.103562
-      x: 0.0
-      y: 0.0
-      z: -0.994623
-    position:
-      x: -2.900000
+      x: -2.989289
       y: 1.600000
-      z: 0.0
-- frame_id: map
-  name: wp22_-4.800_1.200
-  pose:
-    orientation:
-      w: 0.931975
-      x: 0.0
-      y: 0.0
-      z: -0.362523
-    position:
-      x: -4.800000
-      y: 1.200000
-      z: 0.0
-- frame_id: map
-  name: wp23_-3.600_0.100
-  pose:
-    orientation:
-      w: 1.000000
-      x: 0.0
-      y: 0.0
-      z: 0.000000
-    position:
-      x: -3.600000
-      y: 0.100000
       z: 0.0
