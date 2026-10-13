@@ -7,7 +7,8 @@ clearing_rotation_allowed: false
 controller_frequency: 10.0 #向底盘控制移动话题cmd_vel发送命令的频率. 15 Hz 时 TEB 常来不及在 66 ms 内求解完，控制器报失败会造成一卡一卡；10 Hz 更稳
 controller_patience: 3.0
 
-planner_frequency: 0.5
+planner_frequency: 2.0 #全局路径重算频率. 原来 0.5（每 2 秒一次）时绿色线看着"不更新"，
+                       #因为 TEB 的预瞄距离受限于这条线的长度，线不刷新车就会在末端减速。
 planner_patience: 5.0
 
 #机器人必须移动多远（以米计）才能被视为不摆动。
