@@ -36,7 +36,7 @@ TebLocalPlannerROS:
   # Robot
   max_vel_x: 6.0          # 直道极速 m/s；急弯速度由 max_vel_theta 独立卡在 3.85。直道仅 3~4 m，6 已能达到理论极速（再高无收益、徒增冲弯风险）
   max_vel_x_backwards: 1
-  max_vel_theta: 5.0      # 最大角速度 rad/s；实测最急弯半径 0.77 m，5.0×0.77=3.85 m/s 时横向加速度 1.96g，正好在轮胎 2g 抓地极限内
+  max_vel_theta: 5.5      # 最大角速度 rad/s。实测最急弯半径 0.56 m，5.5×0.56=3.08 m/s 时横向加速度 1.90g，留 5% 抓地余量（5.9 顶满 2g 无余量，队友反馈激进会不稳，故留余量）
   acc_lim_x: 7.0          # 线加速度上限 m/s^2；直道/出弯快速加速（抓地极限约 19.6，弯中 TEB 自动减速，7 留稳定余量）
   acc_lim_theta: 8.0      # 角加速度上限 rad/s^2；发卡弯更快打/回方向（原 7.0，本步单变量上调）
 
@@ -45,7 +45,7 @@ TebLocalPlannerROS:
   # acc_lim_y (double, default: 0.5)
 
   # ********************** Carlike robot parameters ********************
-  min_turning_radius: 0.5 # 最小转弯半径 注意车辆运动学中心是后轮中点
+  min_turning_radius: 0.40 # 最小转弯半径（原 0.5）。实际车几何：轮距 0.26 / tan(0.6) ≈ 0.38，0.40 留余量，让 TEB 能切更紧的弯
   wheelbase: 0.26 # 即前后轮距离
 
   #设置为true时，ROS话题（rostopic） cmd_vel/angular/z 内的数据是舵机角度，
