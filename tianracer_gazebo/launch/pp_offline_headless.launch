@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- 离线无头竞速: gzserver(无GUI) + 底盘控制 + 离线赛车线跟踪节点
+     用法: roslaunch tianracer_gazebo pp_offline_headless.launch
+     或分步:
+       roslaunch tianracer_gazebo pp_headless.launch
+       rosrun tianracer_gazebo pp_race_offline.py
+-->
+<launch>
+  <arg name="robot_name" default="tianracer"/>
+  <arg name="world" default="tianracer_racetrack"/>
+
+  <include file="$(find tianracer_gazebo)/launch/tianracer_on_racetrack.launch">
+    <arg name="world" value="$(arg world)"/>
+    <arg name="robot_name" value="$(arg robot_name)"/>
+    <arg name="gui" value="false"/>
+    <arg name="headless" value="true"/>
+    <arg name="paused" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <include file="$(find tianracer_gazebo)/launch/tianracer_control.launch">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
+
+  <!-- 离线赛车线跟踪节点 -->
+  <node pkg="tianracer_gazebo" type="pp_race_offline.py" name="pp_race_offline" output="screen">
+    <param name="laps" value="5"/>
+    <param name="acc" value="6.0"/>
+    <param name="dec" value="9.0"/>
+  </node>
+</launch>
