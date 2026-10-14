@@ -15,7 +15,7 @@ import numpy as np
 import math
 import tf
 import tf2_ros
-import tf2_geometry_msgs
+# RoboStack 环境无 PyKDL/sip, 移除 tf2_geometry_msgs; 下方 twist 旋转改用 tf.transformations 显式计算
 
 robot_name = rospy.get_param('robot_name', default="tianracer")
 class OdometryNode:
@@ -66,7 +66,10 @@ class OdometryNode:
             twist_transform.transform.rotation.w = q[3]
                 
             # transform the Vector3Stamped into the child frame, base_link
-            twist_linear = tf2_geometry_msgs.do_transform_vector3(twist_linear, twist_transform)
+            # (纯旋转, 平移为0): 用逆四元数矩阵显式旋转, 等价 do_transform_vector3
+            _v=np.array([twist_linear.vector.x,twist_linear.vector.y,twist_linear.vector.z])
+            _vr=tf.transformations.quaternion_matrix(q)[:3,:3].dot(_v)
+            twist_linear.vector.x,twist_linear.vector.y,twist_linear.vector.z=_vr
             
             ######### the result is not proper ###########
             #print(twist_linear)
