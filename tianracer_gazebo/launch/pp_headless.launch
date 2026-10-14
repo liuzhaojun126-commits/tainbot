@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- 无头竞速: 仅启动 gzserver(无GUI) + 底盘控制(舵机/里程计), 不含地图/导航/RViz。
+     再运行: rosrun tianracer_gazebo pp_race.py -->
+<launch>
+  <arg name="robot_name" default="tianracer"/>
+  <arg name="world" default="tianracer_racetrack"/>
+
+  <include file="$(find tianracer_gazebo)/launch/tianracer_on_racetrack.launch">
+    <arg name="world" value="$(arg world)"/>
+    <arg name="robot_name" value="$(arg robot_name)"/>
+    <arg name="gui" value="false"/>
+    <arg name="headless" value="true"/>
+    <arg name="paused" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <include file="$(find tianracer_gazebo)/launch/tianracer_control.launch">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
+</launch>

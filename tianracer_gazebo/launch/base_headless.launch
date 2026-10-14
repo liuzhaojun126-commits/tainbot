@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- 无头基线: Gazebo + 底盘 + 地图 + AMCL + TEB(move_base), 无RViz; 再由waypoint_laps发圈 -->
+<launch>
+  <arg name="robot_name" default="tianracer"/>
+  <arg name="world" default="tianracer_racetrack"/>
+
+  <node name="map_server" pkg="map_server" type="map_server" ns="$(arg robot_name)"
+        args="$(find tianracer_gazebo)/maps/$(arg world).yaml">
+    <param name="frame_id" value="map"/>
+  </node>
+
+  <include file="$(find tianracer_gazebo)/launch/pp_headless.launch">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+    <arg name="world" value="$(arg world)"/>
+  </include>
+
+  <include file="$(find tianracer_gazebo)/launch/includes/teb_base.launch.xml">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
+
+  <include file="$(find tianracer_gazebo)/launch/includes/amcl.launch.xml">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
+</launch>
