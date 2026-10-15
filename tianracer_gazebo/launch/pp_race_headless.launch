@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_name" default="tianracer"/>
+  <arg name="world" default="tianracer_racetrack"/>
+  <arg name="vmax" default="6.0"/>
+  <arg name="alat" default="8.0"/>
+  <arg name="acc" default="6.0"/>
+  <arg name="dec" default="9.0"/>
+  <arg name="laps" default="5"/>
+
+  <include file="$(find tianracer_gazebo)/launch/pp_headless.launch">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+    <arg name="world" value="$(arg world)"/>
+  </include>
+
+  <node pkg="tianracer_gazebo" type="pp_race.py" name="pp_race" output="screen">
+    <param name="vmax" value="$(arg vmax)"/>
+    <param name="alat" value="$(arg alat)"/>
+    <param name="acc" value="$(arg acc)"/>
+    <param name="dec" value="$(arg dec)"/>
+    <param name="laps" value="$(arg laps)"/>
+  </node>
+</launch>

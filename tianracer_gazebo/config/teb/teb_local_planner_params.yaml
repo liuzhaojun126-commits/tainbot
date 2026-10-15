@@ -36,7 +36,7 @@ TebLocalPlannerROS:
   # Robot
   max_vel_x: 5.0          # 最大前进速度 m/s（原 1.8）
   max_vel_x_backwards: 1
-  max_vel_theta: 6.0      # 最大角速度 rad/s（原 3.6）；5 m/s 时受它限制可达半径 v/ω = 0.83 m
+  max_vel_theta: 0.6      # carlike 且 cmd_angle_instead_rotvel=True 时 cmd_vel.angular.z 即前轮转角rad，此值=最大舵角=舵限 ±0.6 rad（原值 6.0 错误）
   acc_lim_x: 4.0          # 线加速度上限 m/s^2（原 1.8）；0→5 m/s 约需 3.1 m
   acc_lim_theta: 6.0      # 角加速度上限 rad/s^2（原 3.6）
 
@@ -45,7 +45,7 @@ TebLocalPlannerROS:
   # acc_lim_y (double, default: 0.5)
 
   # ********************** Carlike robot parameters ********************
-  min_turning_radius: 0.5 # 最小转弯半径 注意车辆运动学中心是后轮中点
+  min_turning_radius: 0.38 # 最小转弯半径=轴距/tan(最大舵角)=0.26/tan(0.6)≈0.38 m；运动学中心为后轮中点（原值 0.5 偏大）
   wheelbase: 0.26 # 即前后轮距离
 
   #设置为true时，ROS话题（rostopic） cmd_vel/angular/z 内的数据是舵机角度，
